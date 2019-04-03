@@ -4,7 +4,7 @@
 * 1. Implicit Binding is when this is what is left in the dot. ("this.name")
 * 2. Explicit Binding of this occurs when .call(), .apply(), or .bind() are used on a function.
 * 3. Window Binding of this is the global context whenever a function is invoke. (a global object)
-* 4. New Binding
+* 4. New Binding When called on a function, .bind() sets a this context and returns a new function of the same name with a bound this context. So we are "binding" the object to our function. 
 *
 * write out a code example of each explanation above
 */
@@ -50,3 +50,15 @@ let sayHello = function () {
 // Principle 4
 
 // code example for Explicit Binding
+
+const wes = { 
+    name: 'Wes'
+}
+
+let movies = ['Overboard', 'Dirty Dancing', 'Interstellar']
+
+function myFav (movie1, movei2, movie3){ 
+   console.log(`Hello my name is ${this.name} and my favorite movies are ${movies}`)
+}
+
+myFav.apply(wes,movies)
