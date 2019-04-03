@@ -13,9 +13,22 @@
 
 // code example for Window Binding
 
+console.log(this.name);
+
 // Principle 2
 
 // code example for Implicit Binding
+
+const wes = { 
+    name: 'Wes', 
+    'age': 32, 
+    speak(){ 
+        return `Hello my name is ${this.name} and I am ${this.age} years old.`
+    }
+}
+
+console.log(wes.speak())
+
 
 // Principle 3
 
